@@ -5,7 +5,7 @@
 `git` is the underlying software we will use to manage changes to our code and track the history of those changes. You can use `git` directly (via the command-line) or indirectly through another application like Visual Studio Code or GitHub Desktop. No matter how you use it, it works the same, so there are some foundational ideas to become familiar with.
 
 
-## Terminology
+## Terminology - Things
 
 ### Repository
 
@@ -48,6 +48,43 @@ There is no strict rule for what should go in a commit, but a guideline I try to
 It's also not necessary that everything *work* with each commit, but I would also recommend that as a good habit when possible. If making the first change makes it so that the code no longer builds, then maybe you should consider getting it into a working state before doing a commit. These guidelines are all competing priorities, and it's not always possible to achieve all of them at once, so find a flow or pattern that works for you.
 
 
+### Pull Request
+
+This is a term specific to GitHub. Other platforms will call it by other names. A Pull Request is a tool that can be used to move commits from one branch into another, like the `main` branch. There are actually several ways to get commits from one branch into another, but this is one of the more controlled ways. It allows for additional checks on the code to be performed, including code reviews by other programmers. The result of a successful pull request is a *merge*.
+
+
+## Terminology - Actions
+
+### Clone
+
+When you have a remote repository and you want to create a copy on your local machine, we say that you *clone the repository*.
+
+
+### Fetch
+
+When there are changes in the remote repository that you want your local repository to be aware of, but you do not want to actually change any of the files in the branch you're working on, we say that you perform a *fetch*. A fetch will only synchronize to your local repository what it knows about the remote repository. It does not change the files in your repository.
+
+
+### Pull
+
+If you want to synchronize what your local repository knows about the remote repository while also changing/updating the files on your current branch, we say that you perform a *pull*. A pull completes a *fetch* but then it also updates the current branch in your local repository to match the copy of your current branch in the remote repository. It does this by *merging* the changes from the remote branch into your local branch.
+
+
 ### Merge
 
-### Pull Request
+When you want to take all of the changes from one branch and add them to another, we say that you are doing a *merge*. A merge will take all of the commits on a branch that are not already in another branch and add them to the second branch. This is usually how you go from having code on a branch you're working on to getting the code into the `main` branch. The best way to create these merges is through pull requests.
+
+
+### Add
+
+When you have made changes to files in your working directory and you want to move those changes to the staging area, you *add* them. Adding the process by which untracked changes (in the working directory) become tracked changes (in the staging area).
+
+
+### Commit
+
+When you have tracked changes that you want to bundle and place into the history of the repository, you *commit* them. Committing is the process by which commits are created.
+
+
+### Push
+
+When you have commits in your local repository that you need to add to the remote repository, you *push* them. Pushing is the process by which the remote repository becomes in sync with the changes in your local repository. Pushing is the exact opposite of pulling.
